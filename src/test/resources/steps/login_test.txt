@@ -1,0 +1,6 @@
+# Login Test Steps
+
+Navigate to https://www.saucedemo.com/
+Enter standard_user as //input[@id='user-name']
+Enter secret_sauce as //input[@id='password']
+Click //input[@id='login-button']
