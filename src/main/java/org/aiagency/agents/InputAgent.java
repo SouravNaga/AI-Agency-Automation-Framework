@@ -13,7 +13,9 @@ public class InputAgent implements Agent {
     @Override
     public void execute(String instruction) {
         // Example: Enter admin as //input[@id='username']
-        String data = instruction.replace("Enter", "").trim();
+        String firstWord = instruction.split(" ")[0];  // "Enter"
+        String data = instruction.replaceFirst(firstWord, "").trim();
+
         String value = data.split(" as ")[0].trim();
         System.out.println(value);
         String xpath = data.split(" as ")[1].trim();
