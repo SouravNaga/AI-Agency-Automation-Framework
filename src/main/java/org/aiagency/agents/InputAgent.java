@@ -15,6 +15,7 @@ public class InputAgent implements Agent {
         // Example: Enter admin as //input[@id='username']
         String data = instruction.replace("Enter", "").trim();
         String value = data.split(" as ")[0].trim();
+        System.out.println(value);
         String xpath = data.split(" as ")[1].trim();
 
         WebDriverWait wait = new WebDriverWait(

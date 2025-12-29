@@ -14,6 +14,7 @@ public class AgentRegistry {
         AGENTS.put("Click", new ClickAgent());
         AGENTS.put("Enter", new InputAgent());
         AGENTS.put("Wait", new WaitAgent());
+        AGENTS.put("Verify",new VerificationAgent());
     }
 
     public static Agent getAgent(String keyword) {
