@@ -4,3 +4,19 @@ Navigate to https://www.saucedemo.com/
 Enter standard_user as //input[@id='user-name']
 Enter secret_sauce as //input[@id='password']
 Click //input[@id='login-button']
+Click //div[text()='Sauce Labs Bike Light']
+Click //button[text()='Add to cart']
+Wait for //a[@class='shopping_cart_link']
+Click //a[@class='shopping_cart_link']
+Click //button[text()='Checkout']
+Enter Sourav as //input[@name='firstName']
+Enter Naga as //input[@name='lastName']
+Enter 712413 as //input[@name='postalCode']
+Click //input[@id='continue']
+Click //button[text()='Finish']
+Click //button[text()='Back Home']
+Click //button[@id='react-burger-menu-btn']
+Verify the heading for //div[text()='Swag Labs'] is Swag Labs
+Verify the current url is https://www.saucedemo.com/inventory.html
+Verify the element //div[text()='Swag Labs'] is visible
+Verify the element //div[text()='Swag Labs'] is not clickable

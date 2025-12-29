@@ -3,8 +3,11 @@ package org.aiagency.core;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DriverManager {
     public static WebDriver driver;
@@ -16,9 +19,17 @@ public class DriverManager {
         if(driver==null)
         {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+
+            // Incognito mode
+            options.addArguments("--incognito");
+
+            // Optional: pop-ups and notifications disable
+            options.addArguments("--disable-notifications");
+            options.addArguments("--disable-popup-blocking");
+
+            driver = new ChromeDriver(options);
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
         return driver;
     }
