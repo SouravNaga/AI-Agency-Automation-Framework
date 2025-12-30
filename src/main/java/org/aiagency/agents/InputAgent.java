@@ -11,12 +11,11 @@ import java.time.Duration;
 public class InputAgent implements Agent {
 
     @Override
-    public void execute(String instruction) {
+    public void execute(String... args) {
         // Example: Enter admin as //input[@id='username']
-        String data = instruction.replace("Enter", "").trim();
-        String value = data.split(" as ")[0].trim();
-        System.out.println(value);
-        String xpath = data.split(" as ")[1].trim();
+        String value = args[0];
+//        System.out.println(value);
+        String xpath = args[1];
 
         WebDriverWait wait = new WebDriverWait(
                 DriverManager.getDriver(),

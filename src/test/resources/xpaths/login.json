@@ -1,0 +1,17 @@
+{
+  "username": "//input[@id='user-name']",
+  "password": "//input[@id='password']",
+  "login_btn": "//input[@id='login-button']",
+  "bike_light": "//div[text()='Sauce Labs Bike Light']",
+  "add_to_cart": "//button[text()='Add to cart']",
+  "cart": "//a[@class='shopping_cart_link']",
+  "checkout": "//button[text()='Checkout']",
+  "first_name": "//input[@name='firstName']",
+  "last_name": "//input[@name='lastName']",
+  "postal_code": "//input[@name='postalCode']",
+  "continue": "//input[@id='continue']",
+  "finish": "//button[text()='Finish']",
+  "back_home": "//button[text()='Back Home']",
+  "menu": "//button[@id='react-burger-menu-btn']",
+  "swag_labs_heading": "//div[text()='Swag Labs']"
+}

@@ -10,9 +10,9 @@ import java.time.Duration;
 public class WaitAgent implements Agent {
 
     @Override
-    public void execute(String instruction) {
+    public void execute(String... args) {
         // Example: Wait for //button[@id='login']
-        String xpath = instruction.replace("Wait for", "").trim();
+        String xpath = args[0];
 
         WebDriverWait wait = new WebDriverWait(
                 DriverManager.getDriver(),

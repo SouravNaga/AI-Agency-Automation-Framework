@@ -1,0 +1,27 @@
+# Login Test Steps
+
+Navigate https://www.saucedemo.com/
+
+Enter username standard_user in login page
+Enter password secret_sauce in login page
+Click login_btn in login page
+
+Click bike_light in login page
+Click add_to_cart in login page
+Wait cart in login page
+Click cart in login page
+
+Click checkout in login page
+enter first_name Sourav in login page
+enter last_name Naga in login page
+enter postal_code 712413 in login page
+
+Click continue in login page
+Click finish in login page
+Click back_home in login page
+Click menu in login page
+
+verify within login page the heading_text swag_labs_heading is Swag Labs
+verify within login page the current_url is https://www.saucedemo.com/inventory.html
+verify within login page the element swag_labs_heading is visible
+

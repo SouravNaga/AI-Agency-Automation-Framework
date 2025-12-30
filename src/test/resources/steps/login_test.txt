@@ -1,9 +1,9 @@
 # Login Test Steps
 
 Navigate to https://www.saucedemo.com/
-Enter standard_user as //input[@id='user-name']
-Enter secret_sauce as //input[@id='password']
-Click //input[@id='login-button']
+enter standard_user as //input[@id='user-name']
+ENter secret_sauce as //input[@id='password']
+click //input[@id='login-button']
 Click //div[text()='Sauce Labs Bike Light']
 Click //button[text()='Add to cart']
 Wait for //a[@class='shopping_cart_link']
