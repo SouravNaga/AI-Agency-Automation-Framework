@@ -11,9 +11,9 @@ import java.time.Duration;
 
 public class ClickAgent implements Agent{
     @Override
-    public void execute(String instruction) {
+    public void execute(String... args) {
 
-        String xpath = instruction.replace(instruction.split(" ")[0],"").trim();
+        String xpath = args[0];
         WebDriverWait wait = new WebDriverWait(
                 DriverManager.getDriver(),
                 Duration.ofSeconds(FrameworkConstants.MAX_WAIT_TIME)
