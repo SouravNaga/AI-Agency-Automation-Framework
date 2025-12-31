@@ -22,14 +22,14 @@ public class InstructionParser {
             case "navigate":
                 agent.execute(parts[1]);
                 break;
-
+//            Click bike_light in login page
             case "click":
             case "wait": {
                 String key  = parts[1];
                 String page = parts[3];
 
                 String xpath = PageXPathStore.get(page, key);
-                agent.execute(xpath);
+                agent.execute(xpath,key,page);
                 break;
             }
 
@@ -94,12 +94,6 @@ public class InstructionParser {
         final_list.add(parts[5]);
         final_list.add(parts[6]);
         final_list.add(parts[7]);
-        // Print mapping
-        System.out.println("Statement: " + statement);
-        System.out.println("Verify = " + parts[5]);
-        System.out.println("element = " + parts[6]);
-        System.out.println("expected value = " + parts[7]);
-        System.out.println("-------------------------");
         return final_list;
     }
 }

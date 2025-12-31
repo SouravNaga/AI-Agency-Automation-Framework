@@ -2,6 +2,7 @@ package org.aiagency.agents;
 
 import org.aiagency.constants.FrameworkConstants;
 import org.aiagency.core.DriverManager;
+import org.aiagency.utils.ScreenshotUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,9 +21,9 @@ public class VerificationAgent implements Agent {
     @Override
     public void execute(String... args) {
 
-        String instruction = args[0];   // heading_text / current_url / element
-        String element = args[1];       // xpath OR N/A
-        String expValue = args[2];      // text / url / visible
+        String instruction = args[0];
+        String element = args[1];
+        String expValue = args[2];
 
         switch (instruction) {
 
@@ -46,7 +47,12 @@ public class VerificationAgent implements Agent {
     /* ---------------- HEADING TEXT ---------------- */
 
     private void handleHeadingVerification(String xpath, String expectedText) {
+
         WebElement element = driver.findElement(By.xpath(xpath));
+
+        // 📸 Screenshot before verification
+        ScreenshotUtil.takeScreenshotWithHighlight(driver, element);
+
         String actualText = element.getText().trim();
 
         if (!actualText.equals(expectedText.replace("\"", ""))) {
@@ -58,7 +64,12 @@ public class VerificationAgent implements Agent {
     /* ---------------- URL ---------------- */
 
     private void verifyUrl(String expectedUrl) {
+
+        // 📸 Full page screenshot
+        ScreenshotUtil.takeFullPageScreenshot(driver);
+
         String actualUrl = driver.getCurrentUrl();
+
         if (!actualUrl.equals(expectedUrl)) {
             throw new AssertionError(
                     "Expected URL: " + expectedUrl + " but found: " + actualUrl);
@@ -70,6 +81,9 @@ public class VerificationAgent implements Agent {
     private void handleElementVerification(String xpath, String condition) {
 
         WebElement element = driver.findElement(By.xpath(xpath));
+
+        // 📸 Screenshot before state verification
+        ScreenshotUtil.takeScreenshotWithHighlight(driver, element);
 
         switch (condition.toLowerCase()) {
 
